@@ -10,6 +10,9 @@ export default function Header() {
     };
     return <div>
         <div className="bg-slate-600 p-8 ">
+        <div className="w-24 ">
+            <img src="/logo site.png" alt="Site Logo" className="rounded-3xl"/>
+        </div>
             {/* {desktop-view} */}
            <div className={`lg:flex justify-center space-x-20  font-bold text-lg text-gray-100 ${isMenuOpen? "hidden":"hidden"} lg:"block`}>
             <div className="hover:underline-offset-8 hover:underline hover:text-gray-300 transition duration-300 ease-in-out">
@@ -34,7 +37,7 @@ export default function Header() {
            </div>
            {/* {mobile-view-navigation} */}
            <div className={`lg:hidden ${isMenuOpen?"block":"hidden"}`}>
-            <MobNavModal/>
+            <MobNavModal toggleMenu={toggleMenu}/>
            </div>
         </div>
         <Outlet/>
