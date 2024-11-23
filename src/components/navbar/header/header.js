@@ -46,7 +46,6 @@ export default function Header() {
                         <div className="w-6 h-0.5 bg-gray-300"></div>
                         <div className="w-6 h-0.5 bg-gray-300"></div>
                         <div className="w-6 h-0.5 bg-gray-300"></div>
-                        <div className="w-6 h-0.5 bg-gray-300"></div>
                     </div>
                     {isMenuOpen &&   <div className={`lg:hidden ${isMenuOpen?"block":"hidden"} absolute -right-7`}>
             <MobNavModal toggleMenu={toggleMenu}/>
