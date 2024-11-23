@@ -1,13 +1,17 @@
 import { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import MobNavModal from "../mobNavModal";
+import ProfileModal from "../profileModal";
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+    const [isProfileOpen,setIsProfileOpen]=useState(false)
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
+    const togggleProfile=()=>{
+        setIsProfileOpen((prev)=>!prev)
+    }
     return <div>
         <div className="bg-slate-600 p-8 ">
             {/* {desktop-view} */}
@@ -22,28 +26,37 @@ export default function Header() {
             <div className="hover:underline-offset-8 hover:underline hover:text-gray-300 transition duration-300 ease-in-out">  <NavLink to="/track">Track</NavLink></div>
             <div className="hover:underline-offset-8 hover:underline hover:text-gray-300 transition duration-300 ease-in-out">  <NavLink to="/suggest">Suggest</NavLink></div>
             <div className="hover:underline-offset-8 hover:underline hover:text-gray-300 transition duration-300 ease-in-out">  <NavLink to="/support">Support</NavLink></div>
-           </div></div>
+            <div className="relative">
+            <div className="w-10 cursor-pointer"><img src="/profile.png" className="rounded-3xl" onClick={togggleProfile}/>
+            {isProfileOpen &&    <div className="absolute -right-8 mt-12">
+                <ProfileModal/>
+                </div>}
+            </div>
+            </div>
+           </div>
+           </div>
            {/* {mobile-view} */}
            <div>
-            
             <div className="lg:hidden flex justify-between">
             <div className="w-24 ">
             <img src="/logo site.png" alt="Site Logo" className="rounded-3xl"/>
         </div>
-           <div>     <button onClick={toggleMenu}>
+           <div className="relative"><button onClick={toggleMenu}>
                     <div className="space-y-3 mt-6">
                         <div className="w-6 h-0.5 bg-gray-300"></div>
                         <div className="w-6 h-0.5 bg-gray-300"></div>
                         <div className="w-6 h-0.5 bg-gray-300"></div>
                         <div className="w-6 h-0.5 bg-gray-300"></div>
                     </div>
-                </button></div>
+                    {isMenuOpen &&   <div className={`lg:hidden ${isMenuOpen?"block":"hidden"} absolute -right-7`}>
+            <MobNavModal toggleMenu={toggleMenu}/>
+           </div>}
+                </button>
+                </div>
             </div>
            </div>
            {/* {mobile-view-navigation} */}
-           <div className={`lg:hidden ${isMenuOpen?"block":"hidden"}`}>
-            <MobNavModal toggleMenu={toggleMenu}/>
-           </div>
+         
         </div>
         <Outlet/>
     </div>
