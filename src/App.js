@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Track from './components/pages/track/track';
 import Support from './components/pages/support/support';
 import Suggestion from './components/pages/suggestion/suggestion';
+import Home from './components/pages/home/home';
 
 
 function App() {
@@ -12,7 +13,10 @@ function App() {
     {
       path:"/",
       element:<Header/>,
-      children:[
+      children:[{
+        path:"/",
+        element:<Home/>
+      },
         {
           path:"/track",
           element:<Track/>
