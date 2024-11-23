@@ -1,7 +1,7 @@
 export default function Home() {
     return <div>
      <div className="relative "> 
-     <div className="absolute inset-0 flex items-center justify-center  p-4 text-white text-2xl font-bold bg-black/50">
+     <div className="absolute inset-0 flex items-center justify-center  p-4 text-white text-2xl font-bold bg-black/50 z-10">
         When your friends think 'I'll pay you back' means 'I hope you forget!' 😂
         </div>
         <div>

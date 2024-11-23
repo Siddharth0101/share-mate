@@ -12,7 +12,7 @@ export default function Header() {
     const togggleProfile=()=>{
         setIsProfileOpen((prev)=>!prev)
     }
-    return <div>
+    return <div >
         <div className="bg-slate-600 p-8 ">
             {/* {desktop-view} */}
            <div className={`lg:flex justify-between space-x-20   font-bold text-lg text-gray-100 ${isMenuOpen? "hidden":"hidden"} lg:"block`}>
@@ -28,7 +28,7 @@ export default function Header() {
             <div className="hover:underline-offset-8 hover:underline hover:text-gray-300 transition duration-300 ease-in-out">  <NavLink to="/support">Support</NavLink></div>
             <div className="relative">
             <div className="w-10 cursor-pointer"><img src="/profile.png" className="rounded-3xl" onClick={togggleProfile}/>
-            {isProfileOpen &&    <div className="absolute -right-8 mt-12">
+            {isProfileOpen &&    <div className="absolute -right-8 mt-12 z-20">
                 <ProfileModal/>
                 </div>}
             </div>
@@ -41,7 +41,7 @@ export default function Header() {
             <div className="w-24 ">
             <img src="/logo site.png" alt="Site Logo" className="rounded-3xl"/>
         </div>
-           <div className="relative"><button onClick={toggleMenu}>
+           <div className="relative z-20"><button onClick={toggleMenu}>
                     <div className="space-y-3 mt-6">
                         <div className="w-6 h-0.5 bg-gray-300"></div>
                         <div className="w-6 h-0.5 bg-gray-300"></div>
@@ -55,8 +55,6 @@ export default function Header() {
                 </div>
             </div>
            </div>
-           {/* {mobile-view-navigation} */}
-         
         </div>
         <Outlet/>
     </div>
