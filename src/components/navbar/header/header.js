@@ -17,8 +17,11 @@ export default function Header() {
             {/* {desktop-view} */}
            <div className={`lg:flex justify-between space-x-20   font-bold text-lg text-gray-100 ${isMenuOpen? "hidden":"hidden"} lg:"block`}>
          <div>  <div className="w-24 ">
+            
             <img src="/logo site.png" alt="Site Logo" className="rounded-3xl"/>
-        </div></div>
+          
+        </div></div>    
+        
           <div className="flex space-x-9 m-8 font-extrabold text-2xl">
             <div className="hover:underline-offset-8 hover:underline hover:text-gray-300 transition duration-300 ease-in-out">
                 <NavLink to="/">Home</NavLink>

@@ -6,6 +6,7 @@ import Track from './components/pages/track/track';
 import Support from './components/pages/support/support';
 import Suggestion from './components/pages/suggestion/suggestion';
 import Home from './components/pages/home/home';
+import RegisterPage from './components/pages/register/register';
 
 
 function App() {
@@ -28,6 +29,10 @@ function App() {
         {
           path:"/suggest",
           element:<Suggestion/>
+        },
+        {
+          path:"/register",
+          element:<RegisterPage/>
         }
       ]
     }
