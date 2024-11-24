@@ -10,8 +10,8 @@ export default function MobNavModal({toggleMenu}) {
             <li className="font-bold text-xl p-1 text-white outline outline-gray-300 outline-1"><NavLink to="/track"  onClick={toggleMenu}>Track</NavLink></li>
             <li className="font-bold text-xl p-1 text-white outline outline-gray-300 outline-1"><NavLink to="/suggest" onClick={toggleMenu}>Suggest</NavLink></li>
             <li className="font-bold text-xl p-1 text-white outline outline-gray-300 outline-1"><NavLink to="/support" onClick={toggleMenu}>Support</NavLink></li>
-            <li className="font-bold text-xl p-1 text-white outline outline-gray-300 outline-1"><NavLink to="/"  onClick={toggleMenu}>Login</NavLink></li>
-            <li className="font-bold text-xl p-1 text-white"><NavLink to="/">Register</NavLink></li>
+            <li className="font-bold text-xl p-1 text-white outline outline-gray-300 outline-1"><NavLink to="/login"  onClick={toggleMenu}>Login</NavLink></li>
+            <li className="font-bold text-xl p-1 text-white"><NavLink to="/register">Register</NavLink></li>
         </ul>
       </div>
     </div>
