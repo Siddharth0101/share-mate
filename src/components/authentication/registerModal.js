@@ -1,10 +1,10 @@
 import { Form } from "react-router-dom";
-
+// w-full max-w-lg md:max-w-md lg:max-w-[40vw] h-auto bg-white rounded-2xl p-6 m-4 md:m-16 shadow-lg
 export default function RegisterModal() {
-    return <div className="flex   justify-center">
-        <div className="w-[40vw] h-[40vh] bg-white rounded-2xl m-44">
-            <Form>
-                <div className="flex justify-center text-2xl text-black m-1 ">
+    return <div className="flex justify-center">
+        <div className="lg:max-w-xl h-auto md:max-w-md  p-5 m-5  bg-white rounded-2xl  shadow-2xl ">
+            <Form >
+                <div className="flex justify-center text-2xl text-black font-bold ">
                     Register
                 </div>
                 <div>
